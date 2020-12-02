@@ -20,19 +20,34 @@ defmodule Simearth.Graphics do
     {frame, state}
   end
 
+  # When the user changes the size of the window
   def handle_event({:wx, _, _, _, {:wxSize, :size, size, _}}, state = %{panel: panel}) do
     :wxPanel.setSize(panel, size)
     {:noreply, state}
   end
-  #{:wxCommand, :command_menu_selected, _, _, _}
   def handle_event({:wx, _, _, _, {:wxClose, :close_window}}, state), do: {:stop, :normal, state}
-  def handle_event({:wx, a, _, _, {:wxCommand, :command_menu_selected, _, _, _}}, state) do
-    IO.puts(a)
+  # Exit. Maybe handle this with other events but it does return a different value
+  def handle_event({:wx, 4, _, _, {:wxCommand, :command_menu_selected, _, _, _}}, state) do
+    # TODO: Show save dialogue here
+    IO.puts("Exit selected. Exiting.")
+    {:stop, :normal, state}
+  end
+  # Checkable menu items (options and data sound)
+  def handle_event({:wx, a, frame, _, {:wxCommand, :command_menu_selected, _, _, _}}, state) when div(a, 10) in [4,6] do
+    menu_item = :wxFrame.getMenuBar(frame)
+    |> :wxMenuBar.getMenu(div(a, 10))
+    |> :wxMenu.getMenuItems
+    |> Enum.at(rem(a, 10))
+    IO.puts("#{:wxMenuItem.getText(menu_item)} #{if !:wxMenuItem.isChecked(menu_item), do: "un"}checked")
     {:noreply, state}
   end
-  def handle_event({:wx, 4, _, _, {:wxCommand, :command_menu_selected, _, _, _}}, state) do
-    # Show save dialogue
-    # then
-    {:stop, :normal, state}
+  # All other menu items
+  def handle_event({:wx, a, frame, _, {:wxCommand, :command_menu_selected, _, _, _}}, state) do
+    menu_item = :wxFrame.getMenuBar(frame)
+    |> :wxMenuBar.getMenu(div(a, 10))
+    |> :wxMenu.getMenuItems
+    |> Enum.at(rem(a, 10))
+    IO.puts("#{:wxMenuItem.getText(menu_item)} clicked")
+    {:noreply, state}
   end
 end
