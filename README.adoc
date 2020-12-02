@@ -1,0 +1,23 @@
+= Simearth (1990) remake
+
+== Development
+Remake of Maxis' 1990 game Simearth. At first I am going to be relatively faithful to the original where possible (although I will have to create my own algorithms as the originals aren't publically available). After this is complete I may add some features to it or just work on optimisation.
+
+=== Ideas
+* Each window type present in the original will be added as a popup window (handled by WXWidgets). I'd like to add an option to use a window management system similar to the original but this is low priority for now.
+* I'm probably use shape drawing to get a similar art style to the original, maybe if I can find someone to do some better art that'd be good as it's not my strong suit.
+* It could be interesting to add hypothetical silicon-based life or methane-breathing life however this is a long way off.
+* 2 options for running simulation:
+** Run simulation asynchronously to GUI. Update the GUI every frame (will have to check the default refresh rate for wxWidgets) & have the simulation advancing at n years per tick. This may have the unintended effect of changing how fast each speed setting is on different PCs. It will also make the GUI render the same world twice if the world hasn't advanced since the last refresh. This is what the system is currently set up to do.
+** Run simulation sychronously to GUI. Update the simulation & gui once per frame & have the simulation advance at n years per frame. This may result in faster PCs having the simulation rate limited by their monitor's refresh rate.
+
+== TO-DO list
+=== GUI
+* Add pop-up windows for each of the original window types.
+* Add cell textures for each biome & animal type.
+* Add height/precipitation/temperature etc. maps (these can be similar but with different colours & scales)
+* Add main window with edge scrolling & goto event functions. (How else is the map moved? Dragging?)
+* Add scaling for different aspect ratios and display sizes.
+
+=== Simulation
+* Will start on simulation after GUI skeleton is built
