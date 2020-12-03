@@ -13,7 +13,8 @@ Remake of Maxis' 1990 game Simearth. At first I am going to be relatively faithf
 
 == TO-DO list
 === GUI
-* Add pop-up windows for each of the original window types.
+* [line-through]#Add pop-up windows for each of the original window types.# Mostly done
+* Add rendering on frame refresh to all windows
 * Add cell textures for each biome & animal type.
 * Add height/precipitation/temperature etc. maps (these can be similar but with different colours & scales)
 * Add main window with edge scrolling & goto event functions. (How else is the map moved? Dragging?)
@@ -21,3 +22,6 @@ Remake of Maxis' 1990 game Simearth. At first I am going to be relatively faithf
 
 === Simulation
 * Will start on simulation after GUI skeleton is built
+
+== Running
+To run the game you should have [Elixir](https://elixir-lang.org/) & its dependencies installed on your system. As the game is not yet packaged, you can run it with the command "mix simearth" in the root directory of the project.
