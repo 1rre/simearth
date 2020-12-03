@@ -24,4 +24,4 @@ Remake of Maxis' 1990 game Simearth. At first I am going to be relatively faithf
 * Will start on simulation after GUI skeleton is built
 
 == Running
-To run the game you should have [Elixir](https://elixir-lang.org/) & its dependencies installed on your system. As the game is not yet packaged, you can run it with the command "mix simearth" in the root directory of the project.
+To run the game you should have https://elixir-lang.org/[Elixir] & its dependencies installed on your system. As the game is not yet packaged, you can run it with the command "mix simearth" in the root directory of the project.
