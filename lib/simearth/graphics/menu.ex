@@ -187,6 +187,31 @@ defmodule Simearth.Graphics.Menu do
     {:noreply, Map.put(state, :glossary, Simearth.Graphics.Window.Glossary.start_link(frame))}
   end
 
+  # Pause
+  def resolve_menu(50, _, state) do
+    send(Process.group_leader(), {:speed, :pause})
+    {:noreply, state}
+  end
+
+  # Clockspeed to max
+  def resolve_menu(51, _, state) do
+    send(Process.group_leader(), {:speed, :max})
+    {:noreply, state}
+  end
+
+  # Clockspeed increase
+  def resolve_menu(52, _, state) do
+    send(Process.group_leader(), {:speed, :up})
+    {:noreply, state}
+  end
+
+  # Clockspeed decrease
+  def resolve_menu(53, _, state) do
+    send(Process.group_leader(), {:speed, :down})
+    {:noreply, state}
+  end
+
+
   # Options & data sound (checkable menus)
   def resolve_menu(a, frame, state) when div(a, 10) in [4,6] do
     menu_item = :wxFrame.getMenuBar(frame)
