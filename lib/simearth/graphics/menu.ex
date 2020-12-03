@@ -96,4 +96,114 @@ defmodule Simearth.Graphics.Menu do
     menu
   end
 
+  # Close button selected
+  def resolve_menu(4, _frame, state) do
+    # We need to have a save dialogue here
+    IO.puts("Exit selected. Exiting.")
+    {:stop, :normal, state}
+  end
+
+  # User requests edit window when it exists
+  def resolve_menu(10, _frame, state=%{edit: _edit}) do
+    # TODO: Bring the edit window to focus
+    # This will have to be done through getchildren as the item in the map is a PID
+    {:noreply, state}
+  end
+
+  # User otherwise requests edit window
+  def resolve_menu(10, frame, state) do
+    {:noreply, Map.put(state, :edit, Simearth.Graphics.Window.Edit.start_link(frame))}
+  end
+
+  # User requests map window when it exists
+  def resolve_menu(11, _frame, state=%{map: _map}) do
+    # TODO: Bring the map window to focus
+    # This will have to be done through getchildren as the item in the map is a PID
+    {:noreply, state}
+  end
+
+  # User otherwise requests map window
+  def resolve_menu(11, frame, state) do
+    {:noreply, Map.put(state, :map, Simearth.Graphics.Window.Map.start_link(frame))}
+  end
+
+  # User requests gaia window when it exists
+  def resolve_menu(12, _frame, state=%{gaia: _gaia}) do
+    # TODO: Bring the gaia window to focus
+    # This will have to be done through getchildren as the item in the map is a PID
+    {:noreply, state}
+  end
+
+  # User otherwise requests gaia window
+  def resolve_menu(12, frame, state) do
+    {:noreply, Map.put(state, :gaia, Simearth.Graphics.Window.Gaia.start_link(frame))}
+  end
+
+    # User requests history window when it exists
+  def resolve_menu(13, _frame, state=%{history: _history}) do
+    # TODO: Bring the history window to focus
+    # This will have to be done through getchildren as the item in the map is a PID
+    {:noreply, state}
+  end
+
+  # User otherwise requests history window
+  def resolve_menu(13, frame, state) do
+    {:noreply, Map.put(state, :history, Simearth.Graphics.Window.History.start_link(frame))}
+  end
+
+  # User requests report window when it exists
+  def resolve_menu(14, _frame, state=%{report: _report}) do
+    # TODO: Bring the report window to focus
+    # This will have to be done through getchildren as the item in the map is a PID
+    {:noreply, state}
+  end
+
+  # User otherwise requests report window
+  def resolve_menu(14, frame, state) do
+    {:noreply, Map.put(state, :report, Simearth.Graphics.Window.Report.start_link(frame))}
+  end
+
+  # User requests tutorial window when it exists
+  def resolve_menu(15, _frame, state=%{tutorial: _tutorial}) do
+    # TODO: Bring the tutorial window to focus
+    # This will have to be done through getchildren as the item in the map is a PID
+    {:noreply, state}
+  end
+
+  # User otherwise requests tutorial window
+  def resolve_menu(15, frame, state) do
+    {:noreply, Map.put(state, :tutorial, Simearth.Graphics.Window.Tutorial.start_link(frame))}
+  end
+
+  # User requests glossary window when it exists
+  def resolve_menu(16, _frame, state=%{glossary: _glossary}) do
+    # TODO: Bring the glossary window to focus
+    # This will have to be done through getchildren as the item in the map is a PID
+    {:noreply, state}
+  end
+
+  # User otherwise requests glossary window
+  def resolve_menu(16, frame, state) do
+    {:noreply, Map.put(state, :glossary, Simearth.Graphics.Window.Glossary.start_link(frame))}
+  end
+
+  # Options & data sound (checkable menus)
+  def resolve_menu(a, frame, state) when div(a, 10) in [4,6] do
+    menu_item = :wxFrame.getMenuBar(frame)
+    |> :wxMenuBar.getMenu(div(a, 10))
+    |> :wxMenu.getMenuItems
+    |> Enum.at(rem(a, 10))
+    IO.puts("#{:wxMenuItem.getText(menu_item)} #{if !:wxMenuItem.isChecked(menu_item), do: "un"}checked")
+    {:noreply, state}
+  end
+
+  # All other menu items
+  def resolve_menu(a, frame, state) do
+    menu_item = :wxFrame.getMenuBar(frame)
+    |> :wxMenuBar.getMenu(div(a, 10))
+    |> :wxMenu.getMenuItems
+    |> Enum.at(rem(a, 10))
+    IO.puts("#{:wxMenuItem.getText(menu_item)} clicked")
+    {:noreply, state}
+  end
 end
