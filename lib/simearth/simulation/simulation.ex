@@ -12,6 +12,7 @@ defmodule Simearth.Simulation do
   @impl true
   # Program is closing
   def handle_call(:DOWN, _, state) do
+    IO.puts("Stopping")
     {:stop, :normal, state}
   end
 
