@@ -97,10 +97,9 @@ defmodule Simearth.Graphics.Menu do
   end
 
   # Close button selected
-  def resolve_menu(4, _frame, state) do
+  def resolve_menu(4, _frame, _state) do
     # We need to have a save dialogue here
-    IO.puts("Exit selected. Exiting.")
-    {:stop, :normal, state}
+    send(Process.group_leader, :close)
   end
 
   # User requests edit window when it exists

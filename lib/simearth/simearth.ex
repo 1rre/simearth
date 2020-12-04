@@ -11,8 +11,9 @@ defmodule Simearth do
 
   defp loop(state = [gui: gui, sim: sim, clk: clk]) do
     receive do
-      # Closing program
-      {:DOWN, ^gui, _, _, _} -> send(sim, :DOWN); :ok
+      # Closing program (I originally delicately stopped the sim but it wasn't getting to the lines?)
+      {:DOWN, ^gui, _, _, _} -> GenServer.cast(sim, :close); :ok
+      :close -> GenServer.cast(sim, :close); :ok
       # Clock ticks
       :tick -> GenServer.cast(sim, :tick); loop(state)
       # Change of clockspeed

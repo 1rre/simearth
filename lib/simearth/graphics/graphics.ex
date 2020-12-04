@@ -21,6 +21,13 @@ defmodule Simearth.Graphics do
     {frame, state}
   end
 
+  def handle_cast(_, state) do
+    IO.puts("Closing")
+    #:wxFrame.destroyChildren(:wxPanel.getParent(panel))
+    :timer.sleep(100)
+    {:stop, :normal, state}
+  end
+
   # When the user changes the size of the window
   def handle_event({:wx, _, _, _, {:wxSize, :size, size, _}}, state = %{panel: panel}) do
     :wxPanel.setSize(panel, size)
