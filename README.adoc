@@ -14,6 +14,7 @@ Remake of Maxis' 1990 game Simearth. At first I am going to be relatively faithf
 == TO-DO list
 === GUI
 * [line-through]#Add pop-up windows for each of the original window types.# Mostly done
+* I've realised the starting window is functionally redundant due to the edit window being its own window - I might move this back.
 * Add rendering on frame refresh to all windows
 * Add cell textures for each biome & animal type.
 * Add height/precipitation/temperature etc. maps (these can be similar but with different colours & scales)
