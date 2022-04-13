@@ -7,6 +7,7 @@
     "qmainwindow": "cpp",
     "qmenubar": "cpp",
     "qaction": "cpp",
-    "qtranslator": "cpp"
+    "qtranslator": "cpp",
+    "qmenu": "cpp"
   }
 }

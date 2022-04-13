@@ -4,11 +4,11 @@
 
 namespace SimEarth::Menu {
   Model::Model(QMainWindow* parent) :
+      menu(parent->menuBar()->addMenu(parent->tr("&Model"))),
       geosphere(parent->tr("Geosphere"), parent),
       atmosphere(parent->tr("Atmosphere"), parent),
       biosphere(parent->tr("Biosphere"), parent),
-      civilisation(parent->tr("Civilisation"), parent),
-      menu(parent->menuBar()->addMenu(parent->tr("&Model"))) {
+      civilisation(parent->tr("Civilisation"), parent) {
     menu->addActions({&geosphere, &atmosphere, &biosphere, &civilisation});
   }
   Model::~Model() {

@@ -2,7 +2,7 @@
 #define SIMEARTH_MENU_WINDOW_H
 
 #include <QtWidgets/QMenu>
-#include <QtGUI/QAction>
+#include <QtGui/QAction>
 #include <QtWidgets/QMainWindow>
 
 namespace SimEarth::Menu {
