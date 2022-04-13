@@ -1,10 +1,14 @@
-#ifndef SIMEARTH_MAINWINDOW_H
-#define SIMEARTH_MAINWINDOW_H
+#ifndef SIMEARTH_MAINWINDOW
+#define SIMEARTH_MAINWINDOW
 
 #include <QtWidgets/QMainWindow>
 #include "SimEarth/Menu/File.h++"
 #include "SimEarth/Menu/Window.h++"
 #include "SimEarth/Menu/Model.h++"
+#include "SimEarth/Menu/Graph.h++"
+#include "SimEarth/Menu/Options.h++"
+#include "SimEarth/Menu/Speed.h++"
+#include "SimEarth/Menu/Sound.h++"
 
 namespace SimEarth {
     class MainWindow : public QMainWindow {
@@ -13,6 +17,8 @@ namespace SimEarth {
       Menu::File* menuFile;
       Menu::Window* menuWindow;
       Menu::Model* menuModel;
+      Menu::Graph* menuGraph;
+      Menu::Options* menuOptions;
       
       /*
       QMenu* modelMenu;
@@ -31,4 +37,4 @@ namespace SimEarth {
 } // namespace SimEarth
 
 
-#endif // SIMEARTH_MAINWINDOW_H
+#endif // SIMEARTH_MAINWINDOW

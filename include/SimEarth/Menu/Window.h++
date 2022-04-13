@@ -1,24 +1,23 @@
-#ifndef SIMEARTH_MENU_WINDOW_H
-#define SIMEARTH_MENU_WINDOW_H
+#ifndef SIMEARTH_MENU_WINDOW
+#define SIMEARTH_MENU_WINDOW
 
 #include <QtWidgets/QMenu>
 #include <QtGui/QAction>
 #include <QtWidgets/QMainWindow>
 
 namespace SimEarth::Menu {
-  class Window {
-    public:
-      QMenu* menu;
-      QAction edit;
-      QAction map;
-      QAction globe;
-      QAction gaia;
-      QAction history;
-      QAction report;
-      QAction tutorial;
-      QAction glossary;
-      Window(QMainWindow* parent);
-      ~Window();
+  struct Window {
+    QMenu* menu;
+    QAction edit;
+    QAction map;
+    QAction globe;
+    QAction gaia;
+    QAction history;
+    QAction report;
+    QAction tutorial;
+    QAction glossary;
+    Window(QMainWindow* parent);
+    ~Window();
   };
 }
 

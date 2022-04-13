@@ -15,7 +15,7 @@ namespace SimEarth::Menu {
       glossary(parent->tr("Glossary"), parent) {
     menu->addActions({&edit, &map, &globe, &gaia, &history, &report, &tutorial, &glossary});
   }
-  Window::~Window() {    
+  Window::~Window() {
     delete(menu);
   }
 } // namespace SimEarth::Menu

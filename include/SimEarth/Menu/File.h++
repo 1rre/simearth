@@ -1,5 +1,5 @@
-#ifndef SIMEARTH_MENU_FILE_H
-#define SIMEARTH_MENU_FILE_H
+#ifndef SIMEARTH_MENU_FILE
+#define SIMEARTH_MENU_FILE
 
 #include <QtWidgets/QMenu>
 #include <QtGui/QAction>
@@ -20,4 +20,4 @@ namespace SimEarth::Menu {
   };
 }
 
-#endif // SIMEARTH_MENU_FILE_H
+#endif // SIMEARTH_MENU_FILE
