@@ -11,7 +11,7 @@
 #include "SimEarth/Menu/Sound.h++"
 
 namespace SimEarth {
-    class MainWindow : public QMainWindow {
+  class MainWindow : public QMainWindow {
     private:
       Q_OBJECT
       Menu::File* menuFile;

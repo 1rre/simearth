@@ -3,7 +3,7 @@
 
 #include <QtWidgets/QMenu>
 #include <QtGui/QAction>
-#include <QtWidgets/QMainWindow>
+#include "SimEarth/MainWindow.h++"
 
 namespace SimEarth::Menu {
   struct Model {
@@ -12,7 +12,7 @@ namespace SimEarth::Menu {
     QAction atmosphere;
     QAction biosphere;
     QAction civilisation;
-    Model(QMainWindow* parent);
+    Model(MainWindow* parent);
     ~Model();
   };
 }

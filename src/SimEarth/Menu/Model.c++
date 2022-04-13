@@ -1,9 +1,9 @@
 #include "SimEarth/Menu/Model.h++"
-#include <QtWidgets/QMainWindow>
+#include "SimEarth/MainWindow.h++"
 #include <QtWidgets/QMenuBar>
 
 namespace SimEarth::Menu {
-  Model::Model(QMainWindow* parent) :
+  Model::Model(MainWindow* parent) :
       menu(parent->menuBar()->addMenu(parent->tr("&Model"))),
       geosphere(parent->tr("Geosphere"), parent),
       atmosphere(parent->tr("Atmosphere"), parent),

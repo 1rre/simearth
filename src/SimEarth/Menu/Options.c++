@@ -1,9 +1,9 @@
 #include "SimEarth/Menu/Options.h++"
-#include <QtWidgets/QMainWindow>
+#include "SimEarth/MainWindow.h++"
 #include <QtWidgets/QMenuBar>
 
 namespace SimEarth::Menu {
-  Options::Options(QMainWindow* parent) :
+  Options::Options(MainWindow* parent) :
       menu(parent->menuBar()->addMenu(parent->tr("&Options"))),
       gotoEvents(parent->tr("Goto Events"), parent), 
       updateBackground(parent->tr("Update Background"), parent),

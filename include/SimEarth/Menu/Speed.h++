@@ -3,15 +3,19 @@
 
 #include <QtWidgets/QMenu>
 #include <QtGui/QAction>
-#include <QtWidgets/QMainWindow>
+#include "SimEarth/MainWindow.h++"
 
 namespace SimEarth::Menu {
   struct Speed {
-    QMenu* menu;
-    QAction fast, moderate, slow, pause;
-    QAction relativeDate, absoluteDate;
-    Speed(QMainWindow* parent);
-    ~Speed();
+    public:
+      Speed(MainWindow*);
+      ~Speed();
+    private:
+      void updateSpeedCheckboxes();
+      void updateDateCheckboxes();
+      QMenu* menu;
+      QAction fast, moderate, slow, pause;
+      QAction relativeDate, absoluteDate;
   };
 }
 

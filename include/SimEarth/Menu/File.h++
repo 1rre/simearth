@@ -3,7 +3,7 @@
 
 #include <QtWidgets/QMenu>
 #include <QtGui/QAction>
-#include <QtWidgets/QMainWindow>
+#include "SimEarth/MainWindow.h++"
 
 namespace SimEarth::Menu {
   struct File {
@@ -11,7 +11,7 @@ namespace SimEarth::Menu {
     QAction newPlanet, loadPlanet, savePlanet, saveAs;
     QAction snapshot;
     QAction quit;
-    File(QMainWindow* parent);
+    File(MainWindow*);
     ~File();
   };
 }

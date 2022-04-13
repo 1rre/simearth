@@ -1,9 +1,10 @@
-#include "SimEarth/Menu/Speed.h++"
-#include <QtWidgets/QMainWindow>
+#include "SimEarth/MainWindow.h++"
 #include <QtWidgets/QMenuBar>
 
-namespace SimEarth::Menu {
-  Speed::Speed(QMainWindow* parent) :
+#include "SimEarth/Menu/Speed.h++"
+
+namespace SimEarth::Menu {  
+  Speed::Speed(MainWindow* parent) :
       menu(parent->menuBar()->addMenu(parent->tr("&Speed"))),
       fast(parent->tr("Fast"), parent), 
       moderate(parent->tr("Moderate"), parent),
@@ -15,10 +16,10 @@ namespace SimEarth::Menu {
     moderate.setCheckable(true);
     slow.setCheckable(true);
     pause.setCheckable(true);
-    pause.setChecked(true);
+    updateSpeedCheckboxes();
     relativeDate.setCheckable(true);
     absoluteDate.setCheckable(true);
-    absoluteDate.setChecked(true);
+    updateDateCheckboxes();
     menu->addActions({
       &fast, &moderate, &slow, &pause,
       &relativeDate, &absoluteDate
@@ -26,5 +27,15 @@ namespace SimEarth::Menu {
   }
   Speed::~Speed() {
     delete(menu);
+  }
+  void Speed::updateSpeedCheckboxes() {
+    pause.setChecked(speed == Pause);
+    moderate.setChecked(speed == Moderate);
+    slow.setChecked(speed == Slow);
+    fast.setChecked(speed == Fast);
+  }
+  void Speed::updateDateCheckboxes() {
+    relativeDate.setChecked(dateMode == Relative);
+    absoluteDate.setChecked(dateMode == Absolute);
   }
 } // namespace SimEarth::Menu

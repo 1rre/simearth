@@ -3,13 +3,13 @@
 
 #include <QtWidgets/QMenu>
 #include <QtGui/QAction>
-#include <QtWidgets/QMainWindow>
+#include "SimEarth/MainWindow.h++"
 
 namespace SimEarth::Menu {
   struct Window {
     QMenu* menu;
     QAction edit, map, globe, gaia, history, report, tutorial, glossary;
-    Window(QMainWindow* parent);
+    Window(MainWindow* parent);
     ~Window();
   };
 }

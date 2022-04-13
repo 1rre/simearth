@@ -3,13 +3,13 @@
 
 #include <QtWidgets/QMenu>
 #include <QtGui/QAction>
-#include <QtWidgets/QMainWindow>
+#include "SimEarth/MainWindow.h++"
 
 namespace SimEarth::Menu {
   struct Options {
     QMenu* menu;
     QAction gotoEvents, updateBackground, compressEditScreen, music, soundEffects, messages, autoscroll, save;
-    Options(QMainWindow* parent);
+    Options(MainWindow* parent);
     ~Options();
   };
 }

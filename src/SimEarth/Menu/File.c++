@@ -1,9 +1,9 @@
 #include "SimEarth/Menu/File.h++"
-#include <QtWidgets/QMainWindow>
+#include "SimEarth/MainWindow.h++"
 #include <QtWidgets/QMenuBar>
 
 namespace SimEarth::Menu {
-  File::File(QMainWindow* parent) :
+  File::File(MainWindow* parent) :
       menu(parent->menuBar()->addMenu(parent->tr("&File"))),
       newPlanet(parent->tr("New Planet"), parent), 
       loadPlanet(parent->tr("Load Planet"), parent),

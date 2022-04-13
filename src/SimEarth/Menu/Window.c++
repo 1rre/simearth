@@ -1,9 +1,9 @@
 #include "SimEarth/Menu/Window.h++"
-#include <QtWidgets/QMainWindow>
+#include "SimEarth/MainWindow.h++"
 #include <QtWidgets/QMenuBar>
 
 namespace SimEarth::Menu {
-  Window::Window(QMainWindow* parent) :
+  Window::Window(MainWindow* parent) :
       menu(parent->menuBar()->addMenu(parent->tr("&Window"))),
       edit(parent->tr("Edit"), parent), 
       map(parent->tr("Map"), parent),
