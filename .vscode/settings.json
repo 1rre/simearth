@@ -4,6 +4,9 @@
     "qapplication": "cpp",
     "*.c++": "cpp",
     "*.h++": "cpp",
-    "qmainwindow": "cpp"
+    "qmainwindow": "cpp",
+    "qmenubar": "cpp",
+    "qaction": "cpp",
+    "qtranslator": "cpp"
   }
 }

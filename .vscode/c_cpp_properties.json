@@ -15,6 +15,25 @@
             ],
             "cStandard": "gnu17",
             "cppStandard": "gnu++17"
+        },
+        {
+            "name": "Win32",
+            "includePath": [
+                "${default}",
+                "C:\\Qt\\6.1.0\\msvc2019_64\\include\\"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.19041.0",
+            "compilerPath": "C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29910/bin/Hostx64/x64/cl.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-msvc-x64",
+            "compilerArgs": [],
+            "configurationProvider": "ms-vscode.qbs-tools"
         }
     ],
     "version": 4
