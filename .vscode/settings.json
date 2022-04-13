@@ -1,0 +1,9 @@
+{
+  "files.associations": {
+    "*.dgm": "json",
+    "qapplication": "cpp",
+    "*.c++": "cpp",
+    "*.h++": "cpp",
+    "qmainwindow": "cpp"
+  }
+}
