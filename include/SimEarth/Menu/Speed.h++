@@ -8,7 +8,8 @@
 namespace SimEarth::Menu {
   struct Speed {
     QMenu* menu;
-
+    QAction fast, moderate, slow, pause;
+    QAction relativeDate, absoluteDate;
     Speed(QMainWindow* parent);
     ~Speed();
   };

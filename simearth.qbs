@@ -11,7 +11,7 @@ QtApplication {
     "src/SimEarth/Menu/Model.c++",
     "src/SimEarth/Menu/Graph.c++",
     "src/SimEarth/Menu/Options.c++",
-    //"src/SimEarth/Menu/Speed.c++",
+    "src/SimEarth/Menu/Speed.c++",
     //"src/SimEarth/Menu/Sound.c++",
     "include/SimEarth/MainWindow.h++",
     "include/SimEarth/Menu/File.h++",

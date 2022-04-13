@@ -19,17 +19,8 @@ namespace SimEarth {
       Menu::Model* menuModel;
       Menu::Graph* menuGraph;
       Menu::Options* menuOptions;
-      
-      /*
-      QMenu* modelMenu;
-      QMenu* graphMenu;
-      QMenu* optionMenu;
-      QMenu* speedMenu;
-      QMenu* soundMenu;
-      */
+      Menu::Speed* menuSpeed;
 
-      void createMenus();
-      void createActions();
     public:
       MainWindow(QWidget* parent = nullptr);
       ~MainWindow();

@@ -8,14 +8,7 @@
 namespace SimEarth::Menu {
   struct Window {
     QMenu* menu;
-    QAction edit;
-    QAction map;
-    QAction globe;
-    QAction gaia;
-    QAction history;
-    QAction report;
-    QAction tutorial;
-    QAction glossary;
+    QAction edit, map, globe, gaia, history, report, tutorial, glossary;
     Window(QMainWindow* parent);
     ~Window();
   };

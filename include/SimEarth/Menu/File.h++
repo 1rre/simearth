@@ -6,17 +6,13 @@
 #include <QtWidgets/QMainWindow>
 
 namespace SimEarth::Menu {
-  class File {
-    public:
-      QMenu* menu;
-      QAction newPlanet;
-      QAction loadPlanet;
-      QAction savePlanet;
-      QAction saveAs;
-      QAction snapshot;
-      QAction quit;
-      File(QMainWindow* parent);
-      ~File();
+  struct File {
+    QMenu* menu;
+    QAction newPlanet, loadPlanet, savePlanet, saveAs;
+    QAction snapshot;
+    QAction quit;
+    File(QMainWindow* parent);
+    ~File();
   };
 }
 

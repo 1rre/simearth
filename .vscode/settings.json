@@ -8,6 +8,7 @@
     "qmenubar": "cpp",
     "qaction": "cpp",
     "qtranslator": "cpp",
-    "qmenu": "cpp"
+    "qmenu": "cpp",
+    "new": "cpp"
   }
 }
