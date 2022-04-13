@@ -4,7 +4,7 @@
 
 namespace SimEarth::Menu {
   Options::Options(MainWindow* parent) :
-      menu(parent->menuBar()->addMenu(parent->tr("&Options"))),
+      Menu(parent->menuBar()->addMenu(parent->tr("&Options"))),
       gotoEvents(parent->tr("Goto Events"), parent), 
       updateBackground(parent->tr("Update Background"), parent),
       compressEditScreen(parent->tr("Compress Edit Screen"), parent),
@@ -33,8 +33,5 @@ namespace SimEarth::Menu {
     });
     menu->addSeparator();
     menu->addAction(&save);
-  }
-  Options::~Options() {
-    delete(menu);
   }
 } // namespace SimEarth::Menu

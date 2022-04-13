@@ -4,8 +4,8 @@
 #include "SimEarth/Menu/Speed.h++"
 
 namespace SimEarth::Menu {  
-  Speed::Speed(MainWindow* parent) :
-      menu(parent->menuBar()->addMenu(parent->tr("&Speed"))),
+  Speed::Speed(SimEarth::MainWindow* parent) :
+      Menu(parent->menuBar()->addMenu(parent->tr("&Speed"))),
       fast(parent->tr("Fast"), parent), 
       moderate(parent->tr("Moderate"), parent),
       slow(parent->tr("Slow"), parent),
@@ -25,17 +25,14 @@ namespace SimEarth::Menu {
       &relativeDate, &absoluteDate
     });
   }
-  Speed::~Speed() {
-    delete(menu);
-  }
   void Speed::updateSpeedCheckboxes() {
-    pause.setChecked(speed == Pause);
-    moderate.setChecked(speed == Moderate);
-    slow.setChecked(speed == Slow);
-    fast.setChecked(speed == Fast);
+    pause.setChecked(true);
+    moderate.setChecked(false);
+    slow.setChecked(false);
+    fast.setChecked(false);
   }
   void Speed::updateDateCheckboxes() {
-    relativeDate.setChecked(dateMode == Relative);
-    absoluteDate.setChecked(dateMode == Absolute);
+    relativeDate.setChecked(false);
+    absoluteDate.setChecked(true);
   }
 } // namespace SimEarth::Menu

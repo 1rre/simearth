@@ -6,6 +6,8 @@ QtApplication {
   files: [
     "src/main.c++",
     "src/SimEarth/MainWindow.c++",
+    "src/SimEarth/Simulation.c++",
+    "src/SimEarth/Menu/Menu.c++",
     "src/SimEarth/Menu/File.c++",
     "src/SimEarth/Menu/Window.c++",
     "src/SimEarth/Menu/Model.c++",
@@ -14,6 +16,8 @@ QtApplication {
     "src/SimEarth/Menu/Speed.c++",
     //"src/SimEarth/Menu/Sound.c++",
     "include/SimEarth/MainWindow.h++",
+    "include/SimEarth/Simulation.h++",
+    "include/SimEarth/Menu/Menu.h++",
     "include/SimEarth/Menu/File.h++",
     "include/SimEarth/Menu/Window.h++",
     "include/SimEarth/Menu/Model.h++",

@@ -1,4 +1,11 @@
 #include "SimEarth/MainWindow.h++"
+#include <QtWidgets/QMainWindow>
+#include <SimEarth/Menu/File.h++>
+#include <SimEarth/Menu/Graph.h++>
+#include <SimEarth/Menu/Model.h++>
+#include <SimEarth/Menu/Options.h++>
+#include <SimEarth/Menu/Speed.h++>
+#include <SimEarth/Menu/Window.h++>
 
 namespace SimEarth {
 

@@ -4,7 +4,7 @@
 
 namespace SimEarth::Menu {
   File::File(MainWindow* parent) :
-      menu(parent->menuBar()->addMenu(parent->tr("&File"))),
+      Menu(parent->menuBar()->addMenu(parent->tr("&File"))),
       newPlanet(parent->tr("New Planet"), parent), 
       loadPlanet(parent->tr("Load Planet"), parent),
       savePlanet(parent->tr("Save Planet"), parent),
@@ -16,8 +16,5 @@ namespace SimEarth::Menu {
     menu->addAction(&snapshot);
     menu->addSeparator();
     menu->addAction(&quit);
-  }
-  File::~File() {
-    delete(menu);
   }
 } // namespace SimEarth::Menu

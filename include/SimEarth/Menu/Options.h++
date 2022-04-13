@@ -1,16 +1,16 @@
-#ifndef SIMEARTH_MENU_OPTIONS
-#define SIMEARTH_MENU_OPTIONS
+#ifndef _HEADERFILE_SIMEARTH_MENU_OPTIONS
+#define _HEADERFILE_SIMEARTH_MENU_OPTIONS
 
 #include <QtWidgets/QMenu>
 #include <QtGui/QAction>
+#include <QtWidgets/QMainWindow>
 #include "SimEarth/MainWindow.h++"
+#include "SimEarth/Menu/Menu.h++"
 
 namespace SimEarth::Menu {
-  struct Options {
-    QMenu* menu;
+  struct Options : public Menu {
     QAction gotoEvents, updateBackground, compressEditScreen, music, soundEffects, messages, autoscroll, save;
-    Options(MainWindow* parent);
-    ~Options();
+    Options(MainWindow*);
   };
 }
 

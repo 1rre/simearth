@@ -4,13 +4,12 @@
 #include <QtWidgets/QMenu>
 #include <QtGui/QAction>
 #include "SimEarth/MainWindow.h++"
+#include "SimEarth/Menu/Menu.h++"
+
 
 namespace SimEarth::Menu {
-  struct Sound {
-    QMenu* menu;
-
-    Sound(MainWindow* parent);
-    ~Sound();
+  struct Sound : public Menu {
+    Sound(MainWindow*);
   };
 }
 
